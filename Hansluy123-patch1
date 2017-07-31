@@ -1,0 +1,313 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h> 
+#include <conio.h>
+using namespace std;
+
+
+double computeFVelocity(double a, double b, double c){
+
+	return a+(b*c);
+}
+
+double computeAcceleration(double a, double b, double c){
+
+	return (a-b)/c;
+}
+
+double computeTime(double a, double b, double c){
+
+	return (a-b)/c;
+}
+
+double computeIV(double a, double b, double c){
+
+	return b-(a*c);
+}
+
+double computeSpeed(double a, double b){
+
+	return a/b;
+}
+
+double computeDistance(double a, double b){
+
+	return a*b;
+}
+
+double computeSTime(double a, double b){
+
+	return a/b;
+}
+
+double fact(int n){
+	double prod = 1;
+	for(int i = 1; i <= n; i++)
+		prod = prod * i;
+    return prod;
+}
+
+int main(void)
+{
+
+int choice, choice1, choice2, choice3, choice4, r;
+float a, b, c, d, e, f, x; 
+	
+	while(choice !=4)
+	{
+	cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"<<'\n';      
+	cout<<"        FORMULAS MENU\n"<<'\n'; 
+	cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"<<'\n';           
+	cout<<"1. Formula 1: Velocity"<<'\n';      
+	cout<<"2. Formula 2: Speed"<<'\n';         
+	cout<<"3. Formula 3: Summation"<<'\n';  
+	cout<<"4. Formula 4: Volume"<<'\n';       
+	cout<<"5. Exit"<<'\n';  
+    cout<<"\n enter your choice:";
+	cin >> choice;
+	
+	switch(choice){
+		case 1: 
+		    cout<<"\nFormula\nVf=Vi+at\n\nlet:\n\nVf=Final Velocity\nVi=Initial Velocity\na=Acceleration\nt=Time\n\nChoose variable to solve\n\n[1]Final Velocity\n[2]Acceleration\n[3]Time\n[4]Initial velocity\n[5]Back";
+            cout<<"\nChoice";
+			choice1 = 0;
+            while(choice1 != 5)
+			{
+            cout << ">> ";
+			cin >> choice1;
+            if (choice1 == 1){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nInitial Velocity:";
+			cin>>a;
+			cout<<"\nAcceleration:";
+			cin>>b;
+			cout<<"\nTime:";
+			cin>>c;
+				a+(b*c);
+				
+                    double IVelocity = a;
+					double Acceleration = b;
+					double Time = c;
+			cout << "The volume is "<< computeFVelocity(IVelocity, Acceleration, Time) <<".\n";
+			} 
+			else if (choice1 == 2){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nFinal Velocity: ";
+			cin>>a;
+			cout<<"\nInitial Velocity: ";
+			cin>>b;
+			cout<<"\nTime: ";
+			cin>>c;
+				(a-b)/c;
+                    double FVelocity = a;
+					double IVelocity = b;
+					double Time = c;
+			cout << "The acceleration is "<< computeAcceleration(FVelocity, IVelocity, Time) <<".\n";
+			}
+			else if (choice1 == 3){
+				
+            cout<<"\n\nPlug-in the values";
+			cout<<"\nFinal Velocity: ";
+			cin>>a;
+			cout<<"\nInitial Velocity: ";
+			cin>>b;
+			cout<<"\nAcceleration: ";
+			cin>>c;
+				(a-b)/c;
+                    double FV = a;
+					double IV = b;
+					double Acc = c;
+			cout << "The time is "<< computeTime(FV, IV, Acc) <<".\n";
+                }
+            else if (choice1 == 4){
+						
+            cout<<"\n\nPlug-in the values";
+			cout<<"\nAcceleration: ";
+			cin>>a;
+			cout<<"\nFinal velocity: ";
+			cin>>b;
+			cout<<"\nTime: ";
+			cin>>c;
+				b-(a*c);
+                    double Acc = a;
+					double FV = b;
+					double Time = c;
+			cout << "The intial velocity is "<< computeIV(Acc, FV, Time) <<".\n";
+					}  			
+}       
+		     break;
+		case 2:
+	 			cout<<"\nForumla\ns=d/t\n\nlet:\n\ns=Speed\nd=Distance\nt=time\n\nChoose variable to solve\n\n[1]Speed \n[2]Distance\n[3]Time\n[4]Back";
+			cout<<"\nChoice";
+            choice2 = 0;
+            while(choice2 != 5)
+			{
+            cout << ">> ";
+			cin >> choice2;
+            if (choice2 == 1){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nDistance: ";
+			cin>>a;
+			cout<<"\nTime: ";
+			cin>>b;
+			
+				a/b;
+                    double D = a;
+					double T = b;
+			cout << "The speed is "<< computeSpeed(D, T) <<".\n";
+			} 
+			else if (choice2 == 2){
+			
+			cout<<"\n\nsPlug-in the values";
+			cout<<"\nSpeed: ";
+			cin>>a;
+			cout<<"\nTime: ";
+			cin>>b;
+			
+				a*b;
+                    double S = a;
+					double T = b;
+			cout << "The distance is "<< computeDistance(S, T) <<".\n";
+			}
+			else if (choice2 == 3){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nDistance: ";
+			cin>>a;
+			cout<<"\nSpeed: ";
+			cin>>b;
+			
+				a/b;
+                    double D = a;
+					double S = b;
+		
+			cout << "The time is "<< computeSTime(D, S) <<".\n";
+}       
+		     break;
+			
+			case 3: 
+		    cout<<"\nFormula 1:\nsinx & cosx\n\nFormula 2:\n\nsinx only \n\nChoose formula to solve for summation x\n\n[1]Formula 1\n[2]Formula 2\n[3]Back";
+            cout<<"\nChoice";
+			choice3 = 0;
+            while(choice3 != 5)
+			{
+            cout << ">> ";
+			cin >> choice3;
+            if (choice3 == 1){
+	
+		double x, sum=0;
+		cout << "Input x: ";
+    	cin >> x;
+    	double sum1 = 0;
+    	double num, den;
+    	for(int n = 0; n < 100; n++){
+	   	num = pow(-1.0,n) * pow(x, 2*n + 1);
+       	den = fact(2*n + 1);
+       	sum1 = sum1 + num/den;
+    	}
+    	cout << " sin(" << x <<")= "<< sum1 <<'\n';
+
+    	double sum2 = 0;
+    	for(int n = 0; n < 100; n++){
+	   	num = pow(-1.0,n) * pow(x, 2*n);
+      	den = fact(2*n);
+       	sum2 = sum2 + num/den;
+    	}
+    	cout << " cos(" << x <<")= "<< sum2 <<'\n';   
+    
+    	sum=sum1+sum2;
+    	cout<<'\n'<< sum2 <<'\n';
+	
+		}
+		
+			else if (choice3 == 2){
+			double x;
+		puts("Input x: ");
+    	cin >> x;
+    	double sum = 0;
+    	double num, den;
+    	for(int n = 0; n < 100; n++){
+	   num = pow(-1.0,n) * pow(x, 2*n + 1);
+       den = fact(2*n + 1);
+       sum = sum + num/den;
+    	}
+    	std::cout << " sin(" << x <<")= "<< sum <<'\n';
+		
+			}
+			 			
+}       
+		     break;
+		
+		case 4:
+	 			cout<<"\n SORRY PAGE UNDER CONSTRUCTION!";	
+			cout<<"\nForumla\nU=mgh\n\nlet:\n\nU=Potential Energy\nm=Mass\ng=Gravity\nh=height\n\nChoose variable to solve\n\n[1]Potential Energy \n[2]Mass\n[3]Gravity\n[4]Height\n[5]Back";
+			cout<<"\nChoice";
+            choice4 = 0;
+            while(choice4 != 5)
+			{
+            cout << ">> ";
+			cin >> choice4;
+            if (choice4 == 1){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nmass: ";
+			cin>>a;
+			cout<<"\ngravity: ";
+			cin>>b;
+			cout<<"\nheight: ";
+			cin>>c;
+				f=a*b*c;
+                    cout << "\n\nPotential Energy is: " << f << "\n\n";
+			} 
+			else if (choice4 == 2){
+			
+			cout<<"\n\nsPlug-in the values";
+			cout<<"\nPotential Energy: ";
+			cin>>a;
+			cout<<"\nGravity: ";
+			cin>>b;
+			cout<<"\nHeight: ";
+			cin>>c;
+				f=a/(b*c);
+                    cout << "\n\nMass is: " << f << "\n\n"; 
+			}
+			else if (choice4 == 3){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nPotential Energy: ";
+			cin>>a;
+			cout<<"\nMass: ";
+			cin>>b;
+			cout<<"\nHeight: ";
+			cin>>c;
+				f=a/(b*c);
+                    cout << "\n\nGravity is: " << f << "\n\n";
+                }
+            else if (choice4 == 4){
+			
+			cout<<"\n\nPlug-in the values";
+			cout<<"\nPotential Energy: ";
+			cin>>a;
+			cout<<"\nMass: ";
+			cin>>b;
+			cout<<"\nGravity";
+			cin>>c;
+				f=a/(b*c);
+                    cout << "\n\nHeight is: " << f << "\n\n";
+					}  
+}       
+		     break;
+			
+		case 5:
+	 		 cout << "\nHave a good day!\n";
+	 		 return 0;
+	 		 break;
+	 	default:
+	 		cout << "\nINVALID choice\n";
+	}}
+return 0;
+}}
