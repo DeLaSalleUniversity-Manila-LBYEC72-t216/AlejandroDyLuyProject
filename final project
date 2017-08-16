@@ -90,7 +90,32 @@ else if(choice[0]==3){
       cout << "Menu not found!\n"
      }
      }
-     while
+     while (over2!=true);
+     cout << "Order Code: ";
+     cin >> choice[1];
+     if (choice[1]>15){
+      cout << "Error Order Code! \n";
+     }
+     else {
+     cout << "Quantity of Order: ";
+     cin >> quan;
+     order[y]/food = menu[choice[1]].food;
+     order[y].price = menu[choice[1]].price;
+     order[y].quantity = quan;
+     }
+     cout << "Do you want to checkout? (max 10 orders) Y/N: ";
+     cin >> choice3;
+     if (choice3=="N"){
+      y++;
+      cout << "No. of Ordered Items: " << y;
+     }
+     else if (choice 3=="Y"){
+      over=true;
+     }
+     else
+      cout << "Error!";
+     }
+    
  
 
 
