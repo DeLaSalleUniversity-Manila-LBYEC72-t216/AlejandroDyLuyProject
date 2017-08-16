@@ -1,0 +1,10 @@
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <math.h>
+
+int main ()
+{
+
+return0;
+}
