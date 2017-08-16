@@ -6,5 +6,41 @@
 int main ()
 {
 
+using namespace std
+
+int main()
+{
+menu[0].food = "Cheese Sticks";
+menu[1].food = "Nachos";
+menu[2].food = "French Fries";
+menu[3].food = "Calamari";
+menu[4].food = "Chicken Barbeque";
+menu[5].food = "Garlic Parmesan Chicken";
+menu[6].food = "Cheesy Cheddar Chicken";
+menu[7].food = "Baby Back Ribs";
+menu[8].food = "Korean Spareribs";
+menu[9].food = "Beef Salpicao";
+menu[10].food = "Sizzling Bangus";
+menu[11].food = "Salisbury Steak";
+menu[12].food = "Banana Split";
+menu[13].food = "Chocolate Mousse";
+menu[14].food = "Carrot Cake";
+menu[15].food = "Blueberry Cheesecake";
+menu[0].price = 50;
+menu[1].price = 100;
+menu[2].price = 100;
+menu[3].price = 130;
+menu[4].price = 140;
+menu[5].price = 140;
+menu[6].price = 140;
+menu[7].price = 240;
+menu[8].price = 180;
+menu[9].price = 140;
+menu[10].price = 130;
+menu[11].price = 150;
+menu[12].price = 160;
+menu[13].price = 130;
+menu[14].price = 80;
+menu[15].price = 160;
 return0;
 }
