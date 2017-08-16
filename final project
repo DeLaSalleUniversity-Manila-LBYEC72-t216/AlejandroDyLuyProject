@@ -3,10 +3,13 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main ()
-{
-
 using namespace std;
+
+struct att{
+  string food;
+  int price;
+  int quantity;
+}order[10],menu[16];
 
 struct info{
   string firstname;
@@ -16,11 +19,12 @@ struct info{
   string city;
   string contact; 
 };
+void checkout(info *personal);
 
 void checkout(info *personal){
-cout << "Delivere To: " <<personal->firstname << " " <<personal->lastname;
-cout << "\nAddress: "<<personal->streetorunit << " " <<personal->barangay << " " <<personal->city;
-cout << "\nContact Number: "<<personal->contact;
+cout << "Delivered To: " <<personal->firstname << " " <<personal->lastname;
+cout << "\nAddress: " <<personal->streetorunit << " " <<personal->barangay << " " <<personal->city;
+cout << "\nContact Number: " <<personal->contact;
 }
 
 int main()
@@ -57,5 +61,39 @@ menu[12].price = 160;
 menu[13].price = 130;
 menu[14].price = 80;
 menu[15].price = 160;
-return0;
+info personal;
+
+cout << "Welcome to Abdul's Online Delivery Services! \nWhat would you like to order?";
+do{
+cout << "\n1-Appetizers\n2-Entrees\n3-Dessert\n"
+cin >> choice[0];
+if(choice[0]==1){
+  cout << "Appetizers: \n";
+  for(int i=0; i<4; i++){
+    cout << i << " - " << menu[i].food << " - P" << menu[i].price << endl;
+    }
+    over2=true;
+}
+else if(choice[0]==2){
+    cout << "Main Dish: \n";
+   for(int i=4; i<12; i++){
+    cout << i << " - " << menu[i].food << " - P" << menu[i].price << endl;
+   }
+else if(choice[0]==3){
+    cout << "Dessert: \n";
+    for(int i=12; i<16; i++){
+      cout << i << " - " << menu[i].food << " - P" << menu[i].price << endl;
+     }
+     over2=true;
+    }
+    else {
+      cout << "Menu not found!\n"
+     }
+     }
+     while
+ 
+
+
+
+return 0;
 }
