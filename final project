@@ -75,6 +75,7 @@ bool over=false;
 bool over2=false;
 cout << "Welcome to Abdul's Online Delivery Services! \nWhat would you like to order?";
 do{
+do{
 cout << "\n1-Appetizers\n2-Entrees\n3-Dessert\n";
 cin >> choice[0];
 if(choice[0]==1){
@@ -124,7 +125,7 @@ else if(choice[0]==3){
      else if (choice3=="Y"){
       over=true;
      }
-     else{
+     else
       cout << "Error!";
      }
     while(over!=true);
