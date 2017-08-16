@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <math.h>
 #include <sstream>
+#include <new>
+#include <algorithm>
+#include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -63,10 +67,15 @@ menu[13].price = 130;
 menu[14].price = 80;
 menu[15].price = 160;
 info personal;
-
+int quan=0, y=0, total=0;
+int *choice;
+choice = new(nothrow) int[2];
+string choice3="";
+bool over=false;
+bool over2=false;
 cout << "Welcome to Abdul's Online Delivery Services! \nWhat would you like to order?";
 do{
-cout << "\n1-Appetizers\n2-Entrees\n3-Dessert\n"
+cout << "\n1-Appetizers\n2-Entrees\n3-Dessert\n";
 cin >> choice[0];
 if(choice[0]==1){
   cout << "Appetizers: \n";
@@ -80,6 +89,8 @@ else if(choice[0]==2){
    for(int i=4; i<12; i++){
     cout << i << " - " << menu[i].food << " - P" << menu[i].price << endl;
    }
+   over2=true;
+   }
 else if(choice[0]==3){
     cout << "Dessert: \n";
     for(int i=12; i<16; i++){
@@ -88,7 +99,7 @@ else if(choice[0]==3){
      over2=true;
     }
     else {
-      cout << "Menu not found!\n"
+      cout << "Menu not found!\n";
      }
      }
      while (over2!=true);
@@ -110,16 +121,49 @@ else if(choice[0]==3){
       y++;
       cout << "No. of Ordered Items: " << y;
      }
-     else if (choice 3=="Y"){
+     else if (choice3=="Y"){
       over=true;
      }
-     else
+     else{
       cout << "Error!";
      }
-    
- 
-
-
-
+    while(over!=true);
+    cout << "\nPersonal Information: \n";
+    cout << "NAME\n";
+    cout << "First Name: ";
+    cin >> personal.firstname;
+    cout << "Last Name: ";
+    cin >> personal.lastname;
+    cout << "ADDRESS\n";
+    cout << "Street or Unit no.: ";
+    cin >> personal.streetorunit;
+    cout << "Barangay: ";
+    cin >> personal.barangay;
+    cout << "City: ";
+    cin >> personal.city;
+    cout << "Contact #: ";
+    cin >> personal.contact;
+    cout << "Repeat Order: \n";
+    for (int i=0; i<10; i++){
+      cout << order[i].quantity << "-" << order[i].food << " - P" << order[i].price*order[i].quantity << endl;
+      total = (order[i].quantity*order[i].price)+total;
+    }
+checkout(&personal);
+bool over3=false;
+int payment, change;
+do {
+cout << "\nTotal Amount: P" << total << "\nChange for?: ";
+cin >> payment;
+if (payment<total){
+  cout << "Not enough funds!";
+  }
+else {
+  change = payment-total;
+cout << "\nYour change is: " << change << "\nThank you for buying with us!";
+over3 = true;
+}
+}
+while (over3!=true);
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n' );
 return 0;
 }
