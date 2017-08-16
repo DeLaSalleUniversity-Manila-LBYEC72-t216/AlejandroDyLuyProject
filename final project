@@ -6,7 +6,7 @@
 int main ()
 {
 
-using namespace std
+using namespace std;
 
 struct info{
   string firstname;
@@ -14,7 +14,8 @@ struct info{
   string streetorunit;
   string barangay;
   string city;
-  string contact;
+  string contact; 
+};
 
 int main()
 {
