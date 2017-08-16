@@ -99,7 +99,7 @@ else if(choice[0]==3){
      else {
      cout << "Quantity of Order: ";
      cin >> quan;
-     order[y]/food = menu[choice[1]].food;
+     order[y].food = menu[choice[1]].food;
      order[y].price = menu[choice[1]].price;
      order[y].quantity = quan;
      }
