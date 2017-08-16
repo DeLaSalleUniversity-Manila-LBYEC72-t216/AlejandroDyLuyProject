@@ -17,6 +17,12 @@ struct info{
   string contact; 
 };
 
+void checkout(info *personal){
+cout << "Delivere To: " <<personal->firstname << " " <<personal->lastname;
+cout << "\nAddress: "<<personal->streetorunit << " " <<personal->barangay << " " <<personal->city;
+cout << "\nContact Number: "<<personal->contact;
+}
+
 int main()
 {
 menu[0].food = "Cheese Sticks";
