@@ -8,6 +8,14 @@ int main ()
 
 using namespace std
 
+struct info{
+  string firstname;
+  string lastname;
+  string streetorunit;
+  string barangay;
+  string city;
+  string contact;
+
 int main()
 {
 menu[0].food = "Cheese Sticks";
